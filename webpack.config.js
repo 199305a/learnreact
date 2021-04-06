@@ -3,7 +3,7 @@
  * @Author: cui
  * @Date: 2021-04-06 15:22:55
  * @LastEditors: cui
- * @LastEditTime: 2021-04-06 16:08:50
+ * @LastEditTime: 2021-04-06 18:50:56
  */
 
 module.exports = {
@@ -20,6 +20,12 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+      {
         test: /\.jsx$/,
         exclude: /(node_modules)/,  //对这个不做处理
         use: {
@@ -27,5 +33,13 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'React,webpack5 and Babel7',
+      template: 'index.html',
+      filename: 'index.html'
+    })
+  ]
 }
