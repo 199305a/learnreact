@@ -6,7 +6,7 @@ class Content extends React.Component {
     super(props);
   }
   submit(event) {
-
+   console.log(event);
   }
   render() {
     return <div>Hello world!</div>
