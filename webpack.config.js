@@ -3,15 +3,17 @@
  * @Author: cui
  * @Date: 2021-04-06 15:22:55
  * @LastEditors: cui
- * @LastEditTime: 2021-04-06 18:50:56
+ * @LastEditTime: 2021-04-06 19:08:17
  */
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: './jsx/app.jsx',
   output: {
     path: __dirname + '/js/',
     filename: 'bundle.js'
   },
+
   mode: "development",
   module: {
     rules: [
