@@ -1,7 +1,7 @@
 const React = require('react')
 
 const { Link } = require('react-router')
-
+const PropTypes = require('prop-types')
 class Content extends React.Component {
   constructor(props) {
     super(props)
@@ -46,8 +46,8 @@ class Content extends React.Component {
   }
 }
 
-Content.contextType = {
-  router: React.PropTypes.object.isRequired,
-}
+// Content.contextType = {
+//   router: React.PropTypes.Object.isRequired,
+// }
 
 module.exports = Content
