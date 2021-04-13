@@ -24,3 +24,55 @@ ReactDOM.render(
     <Route path="/login" component={Login}></Route>
   </Router>
 )
+const Backbone = require('backbone')
+const Router = Backbone.Router.extend({
+  routes: {
+    '': 'index',
+    about: 'about',
+    posts: 'posts',
+    'posts/:id': 'post',
+    contact: 'contact',
+    login: 'login',
+  },
+  index: function () {
+    render(<Content router={router}></Content>, content)
+  },
+  about: function () {
+    render(
+      <Content>
+        <About />
+      </Content>,
+      content
+    )
+  },
+  posts: function () {
+    render(
+      <Content>
+        <Posts posts={posts} />
+      </Content>,
+      content
+    )
+  },
+  post: function () {
+    render(
+      <Content>
+        <Post id={id} posts={posts} />
+      </Content>,
+      content
+    )
+  },
+  contact: function () {
+    render(
+      <Content>
+        <Contact />
+      </Content>,
+      content
+    )
+  },
+  login: function () {
+    render(<Login />, content)
+  },
+})
+
+let router = new Router()
+Backbone.history.start()
